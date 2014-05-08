@@ -1,0 +1,29 @@
+{
+  "name": "lexinum",
+  "version": "0.0.0",
+  "description": "A simple routine to convert integer values into lexigraphically sortable strings",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/lexinum.git"
+  },
+  "keywords": [
+    "lexigraphic",
+    "order",
+    "sort",
+    "number",
+    "integer"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/lexinum/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/lexinum",
+  "devDependencies": {
+    "tape": "^2"
+  }
+}
