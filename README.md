@@ -75,6 +75,9 @@ An integer value is packed using the following logic:
 
    Instead the characters `N` (negative) and `P` (positive) are used:
 
+It should be noted, that non-numeric values are converted are passed through as is
+and float values are floored to integers.
+
 ## License(s)
 
 ### ISC
