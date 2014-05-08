@@ -6,6 +6,22 @@ var MAXLEN = MAXVAL_STR.length;
 // create the padders for fast padding
 var PADDERS = createPadders(MAXLEN);
 
+/**
+  # lexinum
+
+  A simple function that is able to convert an integer value into a lexicographically
+  sortable string.
+
+  ## Example Usage
+
+  <<< examples/pack.js
+
+  ## How it works
+
+  To be completed.
+
+**/
+
 var pack = module.exports = function(val) {
   // initialise the prefix to P for positive value
   var prefix = 'P';
