@@ -54,6 +54,9 @@ var PADDERS = createPadders(MAXLEN);
 
      Instead the characters `N` (negative) and `P` (positive) are used:
 
+  It should be noted, that non-numeric values are converted are passed through as is
+  and float values are floored to integers.
+
 **/
 
 var lexi = module.exports = function(val) {
@@ -70,6 +73,9 @@ var lexi = module.exports = function(val) {
     prefix = 'N';
     val = Math.abs(val);
   }
+
+  // floor the value
+  val = val | 0;
 
   // convert the value to a string
   val = val.toString();
