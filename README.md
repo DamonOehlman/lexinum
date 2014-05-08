@@ -13,6 +13,8 @@ values in the keys of [leveldb](https://code.google.com/p/leveldb/) store via
 
 ## Example Usage
 
+Packing:
+
 ```js
 var lexi = require('lexinum');
 
@@ -27,9 +29,42 @@ console.log([1, -1].map(lexi).sort());
 
 ```
 
+Unpacking:
+
+```js
+var lexi = require('lexinum');
+
+console.log(lexi.unpack('P0000000000000001'));
+// --> 1
+
+console.log(lexi.unpack('N0000000000000001'));
+// --> -1
+
+console.log([1, -1].map(lexi).sort().map(lexi.unpack));
+// --> [ -1, 1 ]
+
+```
+
+## Why
+
+For two reasons:
+
+1. LevelDB keys are lexicographically sorted.
+2. Arrays in JS are lexicographically sorted (when the sort method is used).
+
 ## How it works
 
-To be completed.
+An integer value is packed using the following logic:
+
+1. The integer value is converted to a string value
+
+2. The string value is then padded left to the match the string length of the
+   maximum value we are catering (2^53).
+
+3. The sign of the integer is prepended to that string with a string ensures
+   correct ordering when lexicographically sorted. The `+` and `-` are not
+   used as the ordering of these characters is `['+', '-']`.  Instead the
+   characters `P` and `N` are used.
 
 ## License(s)
 
