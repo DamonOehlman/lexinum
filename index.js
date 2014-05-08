@@ -42,8 +42,14 @@ var PADDERS = createPadders(MAXLEN);
 
   3. The sign of the integer is prepended to that string with a string ensures
      correct ordering when lexicographically sorted. The `+` and `-` are not
-     used as the ordering of these characters is `['+', '-']`.  Instead the
-     characters `P` and `N` are used.
+     used because:
+
+     ```js
+     console.log(['-', '+'].sort());
+     // --> ['+', '-']
+     ```
+
+     Instead the characters `N` (negative) and `P` (positive) are used:
 
 **/
 
