@@ -29,18 +29,21 @@ var PADDERS = createPadders(MAXLEN);
   For two reasons:
 
   1. LevelDB keys are lexicographically sorted.
-  2. Arrays in JS are lexicographically sorted (when the sort method is used).
+  2. Arrays in JS are lexicographically sorted (when the `[].sort` method is used).
 
   ## How it works
 
   An integer value is packed using the following logic:
 
-  1. The integer value is converted to a string value
+  1. If negative, the value is converted to it's absolute value and the prefix
+     for our packed string is set to `N` for negative (instead of `P` for positive).
 
-  2. The string value is then padded left to the match the string length of the
+  2. The absolute integer value is converted to a string value.
+
+  3. This string value is then padded left to the match the string length of the
      maximum value we are catering (2^53).
 
-  3. The sign of the integer is prepended to that string with a string ensures
+  4. The sign of the integer is prepended to that string with a string ensures
      correct ordering when lexicographically sorted. The `+` and `-` are not
      used because:
 
