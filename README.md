@@ -1,7 +1,9 @@
 # lexinum
 
 A simple function that is able to convert an integer value into a lexicographically
-sortable string.
+sortable string.  I wrote this so I could dependably use both positive and negative
+values in the keys of [leveldb](https://code.google.com/p/leveldb/) store via
+[levelup](https://github.com/rvagg/node-levelup).
 
 
 [![NPM](https://nodei.co/npm/lexinum.png)](https://nodei.co/npm/lexinum/)
