@@ -14,6 +14,10 @@ var PADDERS = createPadders(MAXLEN);
   values in the keys of [leveldb](https://code.google.com/p/leveldb/) store via
   [levelup](https://github.com/rvagg/node-levelup).
 
+  __NOTE:__  The technique and algorithm used here is very simple, and for more
+  advanced cases I would recommend checking out the
+  [bytewise](https://github.com/deanlandolt/bytewise) module.
+
   ## Example Usage
 
   Packing:
