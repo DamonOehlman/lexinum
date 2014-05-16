@@ -79,7 +79,7 @@ var lexi = module.exports = function(val) {
   }
 
   // floor the value
-  val = val | 0;
+  val = Math.floor(val);
 
   // convert the value to a string
   val = val.toString();
